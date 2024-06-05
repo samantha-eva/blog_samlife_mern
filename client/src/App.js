@@ -9,6 +9,7 @@ import {
   SignupPage,
   WriterPage,
 } from "./pages"
+import Loading from './components/Loading';
 
 function Layout() {
   return (
@@ -23,7 +24,8 @@ function Layout() {
 }
 function App() {
   
-  const theme = "light";
+  const theme = "dark";
+  const isLoading = false;
 
   return (
     <main className={theme}>
@@ -40,6 +42,7 @@ function App() {
           <Route path='/sign-in' element={<LoginPage />} />
 
         </Routes>
+        {isLoading && <Loading/>}
       </div>
     </main>
   );
