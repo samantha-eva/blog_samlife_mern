@@ -1,4 +1,4 @@
-import { Banner } from "../components";
+import { Banner, Card} from "../components";
 import { posts, CATEGORIES } from "../utils/dummyData";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ const Home = () => {
   const nunOfPages = 1;
   const [page, setPage] = useState(1);
   const randomIndex = Math.floor(Math.random() * posts.length);
+
 
   if(posts.length < 1)
     return (
@@ -36,6 +37,23 @@ const Home = () => {
               </Link>
             ))}
           </div>
+        </div>
+
+        {/* Blog Post */}
+        <div className='w-full flex flex-col md:flex-row gap-10 2xl:gap-20'>
+        {/* LEFT */}
+        <div className='w-full md:w-2/3 flex flex-col gap-y-28 md:gap-y-14'>
+          {posts?.map((post, index) => (
+            <Card key={post?._id} post={post} index={index} />
+          ))}
+
+          {/* <div className='w-full flex items-cemter justify-center'>
+            <Pagination
+              totalPages={numOfPages}
+              onPageChange={handlePageChange}
+            />
+          </div> */}
+        </div>
         </div>
 
      </div>

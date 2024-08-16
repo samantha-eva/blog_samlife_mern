@@ -4,5 +4,5 @@ import Button from "./Button";
 import Divider from "./Divider";
 import Inputbox from "./InputBox";
 import Banner from "./Banner";
-
-export{ Loading, Logo, Divider, Inputbox, Button, Banner};
+import Card from "./Card";
+export{ Loading, Logo, Divider, Inputbox, Button, Banner, Card};
