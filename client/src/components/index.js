@@ -9,5 +9,7 @@ import Pagination from "./Pagination";
 import PopularPosts from "./PopularPosts";
 import PopularWriters from "./PopularWriters";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
+import PostCommments from "./PostComments";
 
-export{ Loading, Logo, Divider, Inputbox, Button, Banner, Card, Pagination, PopularPosts, PopularWriters, Navbar};
+export{ Loading, Logo, Divider, Inputbox, Button, Banner, Card, Pagination, PopularPosts, PopularWriters, Navbar, Footer, PostCommments};

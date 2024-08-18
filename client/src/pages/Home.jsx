@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
 
-  const numOfPages = 1;
-  const [page, setPage] = useState(1);
+  const numOfPages = 2;
+  const [page, setPage] = useState(0);
   const randomIndex = Math.floor(Math.random() * posts.length);
 
   const handlePageChange = (val) => {

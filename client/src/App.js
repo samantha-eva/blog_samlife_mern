@@ -8,7 +8,7 @@ import {
   WriterPage,
 } from "./pages";
 import Loading from "./components/Loading";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import useStore from "./store";
 
 function Layout() {
@@ -18,6 +18,7 @@ function Layout() {
       <div className='flex-1'>
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 }
@@ -31,9 +32,9 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Home />} />
-            {/* <Route path='/category' element={<CategoriesPage />} />
+            <Route path='/category' element={<CategoriesPage />} />
             <Route path='/:slug/:id?' element={<BlogDetails />} />
-            <Route path='/writer/:id' element={<WriterPage />} /> */}
+            <Route path='/writer/:id' element={<WriterPage />} />
           </Route>
 
           <Route path='/sign-up' element={<SignupPage />} />
