@@ -1,15 +1,19 @@
-import { Banner, Card} from "../components";
-import { posts, CATEGORIES } from "../utils/dummyData";
+import { Banner, Card, Pagination, PopularPosts, PopularWriters} from "../components";
+import { posts, CATEGORIES, popular } from "../utils/dummyData";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
 
-  const nunOfPages = 1;
+  const numOfPages = 1;
   const [page, setPage] = useState(1);
   const randomIndex = Math.floor(Math.random() * posts.length);
 
+  const handlePageChange = (val) => {
+    setPage(val);
 
+    console.log(val);
+  };
   if(posts.length < 1)
     return (
       <div className="w-full h-full px-8 flex
@@ -47,14 +51,22 @@ const Home = () => {
             <Card key={post?._id} post={post} index={index} />
           ))}
 
-          {/* <div className='w-full flex items-cemter justify-center'>
+          <div className='w-full flex items-cemter justify-center'>
             <Pagination
               totalPages={numOfPages}
               onPageChange={handlePageChange}
             />
-          </div> */}
+          </div>
         </div>
+
+        <div className='w-full md:w-1/4 flex flex-col gap-y-12'>
+            {/* POPULAR POSTS */}
+            <PopularPosts posts={popular?.posts} />
+
+            {/* POPULAR WRITERS */}
+            <PopularWriters data={popular?.writers} />
         </div>
+       </div>
 
      </div>
     </div>
